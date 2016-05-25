@@ -13,6 +13,9 @@ http://forum.unity3d.com/threads/best-way-to-collaborate-with-team-member-on-sin
 Versioning large files in Github
 https://git-lfs.github.com/
 
+How to use Git for Unity Source Control
+http://stackoverflow.com/questions/18225126/how-to-use-git-for-unity-source-control
+
 --
 
 ##### Genetic Algorithms #####
