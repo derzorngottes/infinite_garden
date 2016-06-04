@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='InfiniteGarden'>
   <head>
     <meta charset="utf-8">
     <title>infinite garden</title>
@@ -8,9 +8,22 @@
     <link rel='stylesheet' href='stylesheets/bootstrap.css'/>
     <link rel='stylesheet' href='stylesheets/style.css'/>
 
+    <!-- ********** angular libs *********** -->
+    <script src='javascripts/library/angular.js'></script>
+    <script src='javascripts/library/angular-route.js'></script>
+    <script src='javascripts/library/angular-animate.js'></script>
+    <script src='javascripts/library/angular-messages.js'></script>
+
     <!-- ************ angular build *********** -->
+    <script src='javascripts/app.js'></script>
+    <script src='javascripts/config.js'></script>
+    <script src='javascripts/login/login-controller.js'></script>
+
+    <!-- ************ superstatic ************ -->
+    <base href='/'/>
   </head>
   <body class='container'>
+    <!-- ************* navbar/menu ************* -->
     <section class='menu'>
       <div class='row'>
         <div class='col-md-5'>
@@ -21,17 +34,7 @@
         </div>
       </div>
     </section>
-    <section class='main'>
-        <div class='row'>
-          <div class='col-md-4'>
-           <form class="form-signin">
-             <h2 class="form-signin-heading">Login</h2>
-             <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
-             <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
-             <button class="btn btn-info btn-block login" type="submit">Continue</button>
-           </form>
-         </div>
-       </div>
-     </section>
+    <!-- *********** view ************ -->
+    <div ng-view ></div>
   </body>
 </html>
