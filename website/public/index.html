@@ -6,6 +6,7 @@
     <!-- ********* stylesheets ********** -->
     <link rel='stylesheet' href='stylesheets/normalize.css'/>
     <link rel='stylesheet' href='stylesheets/bootstrap.css'/>
+    <link rel="stylesheet" href="stylesheets/font-awesome.css"/>
     <link rel='stylesheet' href='stylesheets/style.css'/>
 
     <!-- ********** angular libs *********** -->
@@ -23,18 +24,15 @@
     <base href='/'/>
   </head>
   <body class='container'>
-    <!-- ************* navbar/menu ************* -->
-    <section class='menu'>
-      <div class='row'>
-        <div class='col-md-5'>
-          <img class ='logo' src='images/logo.png'/>
+      <!-- ************* navbar/menu ************* -->
+      <section class='menu'>
+        <div class='row'>
+          <div class='col-md-5'>
+            <img class ='logo' src='images/logo.png'/>
+          </div>
         </div>
-        <div class='col-md-2 col-md-offset-5'>
-          <button class='btn btn-warning create'>Create Account</div>
-        </div>
-      </div>
-    </section>
-    <!-- *********** view ************ -->
-    <div ng-view ></div>
+      </section>
+      <!-- *********** view ************ -->
+      <div ng-view ></div>
   </body>
 </html>

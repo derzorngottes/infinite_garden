@@ -1,3 +1,4 @@
+/************************* General ***************************/
 @font-face {
 	font-family: 'Bangla';
 	src: url('../fonts/Bangla MN.ttf') format('truetype');
@@ -24,11 +25,24 @@ body {
 	height: 80vh;
 }
 
+footer {
+	text-align: center;
+	background-image: linear-gradient(to bottom, white, #FFAD38)
+}
+
+/************************** Forms ****************************/
+
 .form-signin {
   color: #FFAD38;
   max-width: 380px;
   padding: 15px 35px 45px;
   margin: 0 auto;
+}
+
+.new-account {
+	background-color: white;
+	border: 1px solid orange;
+	position: relative;
 }
 
 .create, .login {
@@ -54,7 +68,46 @@ input[type="password"] {
   border-top-right-radius: 0;
 }
 
-footer {
-	text-align: center;
-	background-image: linear-gradient(to bottom, white, #FFAD38)
+#close-create {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	color: #FFAD38;
+}
+
+#close-create:hover {
+	color: red;
+}
+
+/************************** ngAnimate ****************************/
+
+.ng-enter {
+  transition:0.4s linear all;
+  opacity:0;
+}
+
+.ng-enter.ng-enter-active {
+  opacity:1;
+}
+
+.ng-leave {
+  transition:0.4s linear all;
+  opacity:1;
+}
+
+.ng-leave.ng-leave-active {
+  opacity:0;
+  display: none;
+}
+
+.ng-hide-add, .ng-hide-remove {
+  display: none;
+}
+
+.fade {
+    transition: 0.3s linear all;
+    opacity: 1;
+}
+.fade.ng-hide {
+    opacity: 0;
 }
