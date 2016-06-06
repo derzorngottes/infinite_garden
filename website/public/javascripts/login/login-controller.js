@@ -13,7 +13,6 @@
     vm.createAccount = false;
 
     vm.toggleCreateAccount = function() {
-      console.log('clicked');
       if (vm.createAccount === true) {
         vm.createAccount = false;
       }

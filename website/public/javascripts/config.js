@@ -5,21 +5,16 @@
     .module('InfiniteGarden')
     .config(router);
 
-  router.$inject = ['$routeProvider', '$locationProvider'];
+  router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
-  function router($routeProvider, $locationProvider) {
-    $routeProvider
-      .when('/', {
+  function router($stateProvider, $urlRouterProvider, $locationProvider) {
+    $stateProvider
+      .state('landing', {
+        url: '/',
         templateUrl: 'javascripts/login/login.html',
         controller: 'Login',
         controllerAs: 'user'
-      })
-      .when('/home', {
-        templateUrl: 'javascripts/login/signedin.html',
-        controller: 'Login',
-        controllerAs: 'user'
       });
-
 
       $locationProvider.html5Mode(true);
   }
