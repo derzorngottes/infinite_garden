@@ -6,12 +6,12 @@
          <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
          <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
          <button class="btn btn-info btn-block login" type="submit">Sign In</button>
-         <button class='btn btn-warning btn-block create' ng-click='user.toggleCreateAccount()'>Create Account</button>
+         <button class='btn btn-warning btn-block create' type='button' ng-click='user.toggleCreateAccount()'>Create Account</button>
        </form>
      </div>
      <div ng-show='user.createAccount' class='col-md-4 col-md-offset-4 new-account fade'>
        <i class="fa fa-times fa-2x" id="close-create" aria-hidden="true" ng-click='user.toggleCreateAccount()'></i>
-       <form class="form-signin">
+       <form class="form-signin" action='/create' method='post'>
          <h2 class="form-signin-heading">New Account</h2>
          <input type="text" class="form-control" name="username" placeholder="Username" required="" autofocus="" />
          <input type="password" class="form-control" name="password" placeholder="Password" required=""/>
