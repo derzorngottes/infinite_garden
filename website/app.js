@@ -3,13 +3,13 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-const session = require('cookie-session');
 const bodyParser = require('body-parser');
-const methodOverride = require('method-override');
 
 require('dotenv').load();
+require('rootpath')();
 
 const routes = require('./routes/index');
+const users = require('./routes/users');
 
 const app = express();
 
@@ -19,22 +19,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(methodOverride('_method'));
-app.use(session({
-  name: 'session',
-  keys: [
-    process.env.SESSION_KEY1,
-    process.env.SESSION_KEY2,
-    process.env.SESSION_KEY3
-  ]
-}));
-
-const setUserNameLocal = function (req, res, next) {
-  res.locals.currentUser = req.cookies.user;
-  next();
-}
 
 app.use('/', routes);
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
