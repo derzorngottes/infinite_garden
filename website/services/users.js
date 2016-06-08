@@ -8,18 +8,14 @@ function user() {
 }
 
 user.authenticate = (username, password, callback) => {
-  console.log('in user authentication');
   user().where({ username: username }).first().then(user => {
     if (!user) {
-      console.log('username does not exist');
       return callback("username does not exist");
     }
     bcrypt.compare(password, user.password_digest, (err, isMatch) => {
       if (err || !isMatch) {
         return callback("username and password don't match");
-        console.log('username and pw dont match');
       } else {
-        console.log('found match');
         return callback(undefined, jwt.sign({ sub: user.id }, process.env.SECRET));
       }
     });

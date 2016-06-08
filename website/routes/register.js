@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   // register using api to maintain clean separation between layers
   request.post({
-    url: process.env.HOST + '/users/register',
+    url: process.env.API + '/users/register',
     form: req.body,
     json: true
   },

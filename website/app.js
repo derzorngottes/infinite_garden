@@ -22,6 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: process.env.SECRET,
+  // cookie: { secure: true }, uncomment before deploying to heroku
   saveUnitialized: true,
   resave: false }
 ));
@@ -33,7 +34,7 @@ app.use('/api', expressJwt({ secret: process.env.SECRET }).unless({ path: ['/api
 app.use('/login', require('routes/login'));
 app.use('/register', require('routes/register'));
 app.use('/app', require('routes/app_access'));
-app.use('/users', require('routes/api/users'));
+app.use('/api/users', require('routes/api/users'));
 
 // make '/app' default route
 app.get('/', (req, res, next) => {
