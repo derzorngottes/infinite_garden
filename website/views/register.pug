@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div.form-container
+    h2 Create Account
+    if error
+      div.alert.alert-danger #{error}
+    form(method='post')
+      div.form-group
+        label(for='username') Username
+        input.form-control(type='text' name='username' id='username' value= username || '' required)
+      div.form-group
+        label(for='password') Password
+        input.form-control(type='password' name='password' id='password' required)
+      div.form-group
+        button.btn.btn-primary(type='submit') Register
+        a.btn.btn-link(href='/login') Cancel
