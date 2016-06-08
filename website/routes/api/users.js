@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../knex_lib/users');
+const User = require('../../services/users');
 
 // routes
 router.post('/authenticate', authenticateUser);
@@ -14,7 +14,7 @@ router.delete('/:id', deleteUser);
 module.exports = router;
 
 function authenticateUser(req, res, next) {
-  User.authenticate(req.body.username, req,body.password, (error, token) => {
+  User.authenticate(req.body.username, req.body.password, (error, token) => {
     if (error) {
       res.status(400).send(error);
     }

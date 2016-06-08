@@ -4,24 +4,41 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const expressJwt = require('express-jwt');
+const session = require('express-session');
+const app = express();
 
 require('dotenv').load();
 require('rootpath')();
 
-const routes = require('./routes/index');
-const users = require('./routes/users');
+app.set('view engine', 'pug');
+app.set('views', __dirname + '/views');
 
-const app = express();
-
-app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'app', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: process.env.SECRET,
+  saveUnitialized: true,
+  resave: false }
+));
 
-app.use('/', routes);
-app.use('/users', users);
+// use JWT auth to secure the api
+app.use('/api', expressJwt({ secret: process.env.SECRET }).unless({ path: ['/api/users/authenticate', '/api/users/register'] }));
+
+// routes
+app.use('/login', require('routes/login'));
+app.use('/register', require('routes/register'));
+app.use('/app', require('routes/app_access'));
+app.use('/users', require('routes/api/users'));
+
+// make '/app' default route
+app.get('/', (req, res, next) => {
+  return res.redirect('/app');
+});
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

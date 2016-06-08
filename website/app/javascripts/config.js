@@ -11,7 +11,7 @@
   function router($stateProvider, $urlRouterProvider, $locationProvider) {
     $stateProvider
       .state('login', {
-        url: '/',
+        url: '/app',
         templateUrl: 'javascripts/login/login.html',
         controller: 'Login',
         controllerAs: 'user'
@@ -40,7 +40,7 @@
   //manually bootstrap angular after the JWT token is retrieved from the stateProvider
   $(function() {
     //get JWT token from stateProvider
-    $.get('/token', token => {
+    $.get('/app/token', token => {
       window.jwtToken = token;
 
       angular.bootstrap(document, ['InfiniteGarden']);
