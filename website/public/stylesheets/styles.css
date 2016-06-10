@@ -1,0 +1,13 @@
+body {
+  background-image: url('../images/background-bokeh.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+canvas {
+  position: absolute;
+}
+
+.form-container {
+  z-index: 1;
+}
