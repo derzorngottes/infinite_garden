@@ -9,5 +9,31 @@ canvas {
 }
 
 .form-container {
+  color: #EC9B07;
   z-index: 1;
+  background-color: white;
+  /*background-image: linear-gradient(to bottom, white, #E6FFBB);*/
+  padding: 10px 25px 25px 25px;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+header {
+  background-color: white;
+  /*background-image: linear-gradient(to bottom, white, #E6FFBB);*/
+  padding: 15px 0;
+}
+
+.logo {
+  margin-left: 15px;
+  width: 250px;
+}
+
+.btn {
+  margin-top: 5px;
+}
+
+footer {
+  color: white;
+  text-align: center;
 }
