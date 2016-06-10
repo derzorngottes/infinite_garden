@@ -30,7 +30,7 @@ function authenticateUser(req, res, next) {
 function registerUser(req, res, next) {
   User.createUser(req.body, (error, user) => {
     if (error) {
-      res.status(400).send(error);
+      res.status(400).send(error.error);
     }
     else {
       res.sendStatus(200);

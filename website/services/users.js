@@ -7,16 +7,20 @@ function user() {
   return knex('users');
 }
 
+function account() {
+  return knex('accounts');
+}
+
 user.authenticate = (username, password, callback) => {
-  user().where({ username: username }).first().then(user => {
-    if (!user) {
+  account().where({ username: username }).first().then(account => {
+    if (!account) {
       return callback("username does not exist");
     }
-    bcrypt.compare(password, user.password_digest, (err, isMatch) => {
+    bcrypt.compare(password, account.password_digest, (err, isMatch) => {
       if (err || !isMatch) {
         return callback("username and password don't match");
       } else {
-        return callback(undefined, jwt.sign({ sub: user.id }, process.env.SECRET));
+        return callback(undefined, jwt.sign({ sub: account.id }, process.env.SECRET));
       }
     });
   });
@@ -36,8 +40,24 @@ user.createUser = (data, callback) => {
       data.password_digest = hash;
       delete data.password;
 
-      user().insert(data, '*').then(user => {
-        callback(undefined, user);
+      const avatarPaths = ['app/images/avatars/100.png', 'app/images/avatars/101.png', 'app/images/avatars/102.png', 'app/images/avatars/103.png', 'app/images/avatars/104.png', 'app/images/avatars/105.png', 'app/images/avatars/106.png', 'app/images/avatars/107.png', 'app/images/avatars/108.png', 'app/images/avatars/109.png'];
+
+      const avatar = avatarPaths[Math.floor(Math.random() * 10)];
+
+      account().insert(data, '*').then(account => {
+        user()
+          .insert({
+            account_id: account[0].id,
+            username: account[0].username,
+            avatar: avatar
+          },
+          '*').then(newUser => {
+            callback(undefined, newUser[0]);
+          })
+          .catch((error) => {
+            console.log(error);
+            callback(error);
+          });
       })
       .catch(error => {
         callback(error);
@@ -83,10 +103,11 @@ user.updateUser = (id, userParam, callback) => {
       userParam.password_digest = hash;
       delete userParam.password;
 
-      user()
+      account()
         .where({ id: id })
-        .update({ username: userParam.username, password_digest: userParam.password_digest, avatar: userParam.avatar }, '*')
+        .update({ username: userParam.username, password_digest: userParam.password_digest }, '*')
         .then(user => {
+          user().where()
           callback(undefined, user);
         })
         .catch(error => {
@@ -115,5 +136,7 @@ user.deleteUser = (id, callback) => {
     callback(error);
   });
 }
+
+
 
 module.exports = user;

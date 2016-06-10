@@ -11,7 +11,7 @@
     const service = {};
 
     service.getCurrent = getCurrent;
-    servive.getAll = getAll;
+    service.getAll = getAll;
     service.getById = getById;
     service.getByUsername = getByUsername;
     service.createUser = createUser;
@@ -22,43 +22,43 @@
 
     function getCurrent() {
       return $http
-        .get('/users/current')
+        .get('/api/users/current')
         .then(handleSuccess, handleError);
     }
 
     function getAll() {
       return $http
-        .get('/users')
+        .get('/api/users')
         .then(handleSuccess, handleError);
     }
 
     function getById(id) {
       return $http
-        .get('/users/id/' + id)
+        .get('/api/users/id/' + id)
         .then(handleSuccess, handleError);
     }
 
     function getByUsername(username) {
       return $http
-        .get('/users/name/' + username)
+        .get('/api/users/name/' + username)
         .then(handleSuccess, handleError);
     }
 
     function createUser(user) {
       return $http
-        .post('/users', user)
+        .post('/api/users', user)
         .then(handleSuccess, handleError);
     }
 
     function updateUser(user) {
       return $http
-        .put('/users' + user.id, user)
+        .put('/api/users' + user.id, user)
         .then(handleSuccess, handleError);
     }
 
     function deleteUser(id) {
       return $http
-        .delete('/users' + id)
+        .delete('/api/users' + id)
         .then(handleSuccess, handleError);
     }
 

@@ -9,18 +9,18 @@ body {
 }
 
 .menu {
-	margin-top: 30px;
-	margin-bottom: 30px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 .logo {
-	width: 350px;
+	width: 250px;
 }
 
 .main {
-	background-image: url('../images/fractal-tree.png');
+	/*background-image: url('../images/fractal-tree.png');
   background-repeat: no-repeat;
-	background-position: center;
+	background-position: center;*/
 	width: 100%;
 	height: 80vh;
 }
@@ -30,53 +30,10 @@ footer {
 	background-image: linear-gradient(to bottom, white, #FFAD38)
 }
 
-/************************** Forms ****************************/
+/************************** Menu *********************************/
 
-.form-signin {
-  color: #FFAD38;
-  max-width: 380px;
-  padding: 15px 35px 45px;
-  margin: 0 auto;
-}
-
-.new-account {
-	background-color: white;
-	border: 1px solid orange;
-	position: relative;
-}
-
-.create, .login {
-	font-size: 12pt;
-}
-
-.form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-}
-
-input[type="text"] {
-	margin-bottom: 20px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-input[type="password"] {
-  margin-bottom: 20px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-#close-create {
-	position: absolute;
-	top: 5px;
-	right: 10px;
-	color: #FFAD38;
-}
-
-#close-create:hover {
-	color: red;
+.user-avatar {
+	width: 50px;
 }
 
 /************************** ngAnimate ****************************/

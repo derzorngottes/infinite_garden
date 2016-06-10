@@ -19,22 +19,14 @@
     <!-- ************ angular build *********** -->
     <script src='javascripts/app.js'></script>
     <script src='javascripts/config.js'></script>
-    <script src='javascripts/login/login-controller.js'></script>
+    <script src='javascripts/home/home-controller.js'></script>
+    <script src='javascripts/users/user-service.js'></script>
 
     <!-- ************ superstatic ************ -->
     <base href='/'/>
   </head>
-  <body class='container'>
-    <!-- ************* navbar/menu ************* -->
-    <section class='menu'>
-      <div class='row'>
-        <div class='col-md-5'>
-          <img class ='logo' src='app/images/logo.png'/>
-        </div>
-      </div>
-    </section>
-      <!-- *********** view ************ -->
-      <div ui-view ></div>
-
+  <body>
+    <!-- *********** view ************ -->
+    <div ui-view ></div>
   </body>
 </html>

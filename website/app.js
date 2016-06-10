@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: process.env.SECRET,
-  // cookie: { secure: true }, uncomment before deploying to heroku
+  cookie: { secure: 'auto', maxAge: 3600000 },
   saveUnitialized: true,
   resave: false }
 ));
