@@ -33,8 +33,13 @@ public class Plant : MonoBehavior {
 
   int[][] genome = new int[][] { abcd, bacd, cbad, dbca };
 
-  public virtual int FitnessFunction(Genome genome) {
-    return genome.Total;
+  public virtual int[][] FitnessFunction(Genome genome) {
+    // placeholder
+    return genome;
+
+    // possible outcomes - plant has reached maxheight, must die?
+    // plant has reached fastest grow conditions?
+    // etc?
   }
 
   void Degenerate(int lightDifference) {
