@@ -12,7 +12,7 @@ public class AllPlants : MonoBehavior {
     Plant newPlant = new Plant();
 
     // Take each parent genome and randomly assign genes from a parent
-    for (gene in genome) {
+    foreach (int[] gene in genome) {
       int parent = randomParent();
       if (parent == 0) {
         // newPlant.genome.[this gene] = parent0.genome.[thisgene];
