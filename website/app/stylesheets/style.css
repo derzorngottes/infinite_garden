@@ -10,7 +10,7 @@ body {
 
 .menu {
 	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-bottom: 50px;
 }
 
 .logo {
@@ -32,8 +32,24 @@ footer {
 
 /************************** Menu *********************************/
 
-.user-avatar {
-	width: 50px;
+.user-name {
+	padding: 10px 0;
+	text-align: right;
+	color: #EC9B07;
+}
+
+.user-name p {
+	margin: 0;
+	font-size: 9pt;
+}
+
+#name {
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+.user-avatar img {
+	width: 60px;
 }
 
 /************************** ngAnimate ****************************/

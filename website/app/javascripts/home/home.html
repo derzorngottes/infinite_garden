@@ -1,4 +1,4 @@
-<div class='content'>
+<div class='content container-fluid'>
   <!-- ************* navbar/menu ************* -->
   <section class='menu'>
     <div class='row'>
@@ -6,16 +6,17 @@
         <a href='/'>
           <img style='margin-left: 15px' class ='logo' src='app/images/logo.png'/></a>
       </div>
-      <div class='col-md-offset-5 col-md-1'>
-        <p class='user-name'>{{ home.user.username }}</p>
+      <div class='user-name col-md-offset-4 col-md-2'>
+        <p id="name">{{ home.user.username }}</p>
+        <p>Account</p>
       </div>
-      <div class='col-md-1'>
-        <img class='user-avatar' ng-src='{{ home.user.avatar }}' alt='user avatar picture'>
+      <div class='user-avatar col-md-1'>
+        <img ng-src='{{ home.user.avatar }}' alt='user avatar picture'>
       </div>
     </div>
   </section>
   <section class='main'>
-    <img style='margin-left: 15px;' src='http://dummyimage.com/840x16:9'/>
+    <img style='margin-left: 15px;' src='http://dummyimage.com/800x4:3'/>
     <div class='chat-box'></div>
   </section>
 </div>
