@@ -6,6 +6,8 @@
       //angular
       'ngAnimate',
       'ngMessages',
-      'ui.router'
+      'ui.router',
+      //custom
+      'journal'
     ]);
 })();
