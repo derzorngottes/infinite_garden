@@ -9,19 +9,21 @@
   router.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
   function router($stateProvider, $urlRouterProvider, $locationProvider) {
+    // default route
+    $urlRouterProvider.otherwise('/');
+
     $stateProvider
-      .state('login', {
-        url: '/app',
-        templateUrl: 'javascripts/login/login.html',
-        controller: 'Login',
-        controllerAs: 'user'
-      })
       .state('home', {
-        url: '/home',
-        templateUrl: 'javascripts/home/home.html',
+        url: '/',
+        templateUrl: 'app/javascripts/home/home.html',
         controller: 'Home',
-        controlerAs: 'home',
-        data: { activeTab: 'home' }
+        controllerAs: 'home'
+      })
+      .state('community', {
+        url: '/community',
+        templateUrl: 'javascripts/home/home.html',
+        controller: 'Community',
+        controllerAs: 'community'
       });
 
       $locationProvider.html5Mode(true);
@@ -31,13 +33,13 @@
     // add JWT token as default auth header
     $http.defaults.headers.common['Authorization'] = 'Bearer ' + $window.jwtToken;
 
-    //update active tab on state change
-    $rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) => {
-      $rootScope.activeTab = toState.data.activeTab;
-    });
+    //update active nav on state change, unused for now
+    // $rootScope.$on('$stateChangeSuccess', (event, toState, toParams, fromState, fromParams) => {
+    //   $rootScope.activeNav = toState.data.activeNav;
+    // });
   }
 
-  //manually bootstrap angular after the JWT token is retrieved from the stateProvider
+  // manually bootstrap angular after the JWT token is retrieved from the stateProvider
   $(function() {
     //get JWT token from stateProvider
     $.get('/app/token', token => {

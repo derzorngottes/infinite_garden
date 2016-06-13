@@ -16,7 +16,7 @@ router.get('/', (req, res, next) => {
 router.post('/', (req, res, next) => {
   // authenticate using api to maintain clean separation between layers
   request.post({
-    url: process.env.HOST + '/users/authenticate',
+    url: process.env.API + '/users/authenticate',
     body: req.body,
     json: true
   },

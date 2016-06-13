@@ -1,12 +1,11 @@
 doctype html
 html
   head
-    title= title
+    title infinite garden
     link(rel='stylesheet' href='stylesheets/bootstrap.css')
+    link(rel='stylesheet' href='stylesheets/styles.css')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js')
-  body
+  body.container-fluid(id='bubble-parent' style='height: 800px;')
+    canvas(id='canvas')
     block content
-
-  footer
-    img(src='http://code.divshot.com/geo-bootstrap/img/test/counter2.gif' class='counter')
-    p &copy 1996 Galvanize, Inc.
+    script(src='scripts/floats.js')

@@ -6,78 +6,165 @@
 
 body {
 	font-family: 'Bangla';
+	background-image: url('../images/home-background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .menu {
-	margin-top: 30px;
 	margin-bottom: 30px;
+	background-color: white;
+	width: 100%;
+	padding-top: 15px;
 }
 
 .logo {
-	width: 350px;
+	width: 250px;
 }
 
 .main {
-	background-image: url('../images/fractal-tree.png');
-  background-repeat: no-repeat;
-	background-position: center;
 	width: 100%;
-	height: 80vh;
 }
 
 footer {
 	text-align: center;
-	background-image: linear-gradient(to bottom, white, #FFAD38)
+	color: white;
 }
 
-/************************** Forms ****************************/
+/************************** Menu *********************************/
 
-.form-signin {
-  color: #FFAD38;
-  max-width: 380px;
-  padding: 15px 35px 45px;
-  margin: 0 auto;
+.user-name {
+	padding: 10px 0;
+	text-align: right;
+	color: #EC9B07;
 }
 
-.new-account {
+.user-name p {
+	margin: 0;
+	font-size: 9pt;
+}
+
+#name {
+	font-size: 18pt;
+	font-weight: bold;
+}
+
+.user-avatar img {
+	width: 55px;
+}
+
+/************************** Game View ****************************/
+
+.game-view {
+	height: 80vh;
+	border: 1px solid black;
+	padding-left: 5px;
+}
+
+/************************** Bulletin ****************************/
+
+.bulletin-main {
+	background-image: url('../images/bulletin.jpg');
+	background-position: center;
+	background-size: cover;
+	border-radius: 10px;
+	height: 40vh;
+	margin: 0 5px 5px 5px;
+}
+
+.bulletin-content {
+	height: 90%;
+	width: 90%;
+	border-radius: 10px;
 	background-color: white;
-	border: 1px solid orange;
-	position: relative;
+	margin: 10px auto;
+	overflow: auto;
 }
 
-.create, .login {
-	font-size: 12pt;
+/************************** Posts ****************************/
+
+.posts {
+	padding: 5px;
 }
 
-.form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
+.post {
+	list-style: none;
 }
 
-input[type="text"] {
-	margin-bottom: 20px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+.post img {
+	padding-top: 10px;
+	width: 60px;
 }
 
-input[type="password"] {
-  margin-bottom: 20px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+.title {
+	font-size: 14pt;
+	font-weight: bold;
 }
 
-#close-create {
-	position: absolute;
-	top: 5px;
-	right: 10px;
-	color: #FFAD38;
+.post-author {
+	font-size: 9pt;
 }
 
-#close-create:hover {
-	color: red;
+/************************** Journal ****************************/
+
+#flipbook {
+	margin-left: 5px;
 }
+
+#flipbook .page{
+	background-image: url('../images/linen2.jpg') !important;
+	background-position: center;
+	background-size: cover;
+	line-height:300px;
+	font-size:20px;
+	text-align:center;
+}
+
+#flipbook .hard.cover {
+	background-image: url('../images/leather-cover-front.jpg') !important;
+	background-position: center;
+	background-size: cover;
+	border-radius: 5px;
+	-webkit-box-shadow:inset 0 0 5px #666;
+	-moz-box-shadow:inset 0 0 5px #666;
+	-o-box-shadow:inset 0 0 5px #666;
+	-ms-box-shadow:inset 0 0 5px #666;
+	box-shadow:inset 0 0 5px #666;
+	font-weight:bold;
+}
+
+#flipbook .hard.inside-cover{
+	background-image: url('../images/leather-cover-inside.jpg') !important;
+	background-position: center;
+	background-size: cover;
+	background-color: black;
+	border-radius: 5px;
+	-webkit-box-shadow:inset 0 0 5px #666;
+	-moz-box-shadow:inset 0 0 5px #666;
+	-o-box-shadow:inset 0 0 5px #666;
+	-ms-box-shadow:inset 0 0 5px #666;
+	box-shadow:inset 0 0 5px #666;
+	font-weight:bold;
+}
+
+.journal-entry {
+	width: 100%;
+}
+
+.entry-pic {
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	margin-top: 35px;
+	width: 80%;
+	padding: 0;
+}
+
+.entry-pic img {
+	width: 100%;
+	margin-top: -75px;
+}
+
 
 /************************** ngAnimate ****************************/
 
@@ -105,7 +192,7 @@ input[type="password"] {
 }
 
 .fade {
-    transition: 0.3s linear all;
+    transition: 0.4s linear all;
     opacity: 1;
 }
 .fade.ng-hide {
