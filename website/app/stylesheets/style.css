@@ -28,8 +28,7 @@ body {
 
 footer {
 	text-align: center;
-	padding-top: 10px;
-	color: #EC9B07;
+	color: white;
 }
 
 /************************** Menu *********************************/
@@ -61,42 +60,65 @@ footer {
 	background-color: grey;
 }
 
+/************************** Bulletin ****************************/
+
+.bulletin-main {
+	background-image: url('../images/bulletin.jpg');
+	background-position: center;
+	background-size: cover;
+	border-radius: 10px;
+	height: 40vh;
+	margin: 0 5px 5px 5px;
+}
+
+.bulletin-content {
+	height: 90%;
+	width: 90%;
+	border-radius: 10px;
+	background-color: white;
+	margin: 10px auto;
+}
+
 /************************** Journal ****************************/
 
+#flipbook {
+	margin-left: 5px;
+}
+
 #flipbook .page{
-background-image: url('../images/linen2.jpg') !important;
-background-position: center;
-background-size: cover;
-line-height:300px;
-font-size:20px;
-text-align:center;
+	background-image: url('../images/linen2.jpg') !important;
+	background-position: center;
+	background-size: cover;
+	line-height:300px;
+	font-size:20px;
+	text-align:center;
 }
 
 #flipbook .hard.cover {
-background-image: url('../images/leather-cover-front.jpg') !important;
-background-position: center;
-background-size: cover;
-border-radius: 5px;
--webkit-box-shadow:inset 0 0 5px #666;
--moz-box-shadow:inset 0 0 5px #666;
--o-box-shadow:inset 0 0 5px #666;
--ms-box-shadow:inset 0 0 5px #666;
-box-shadow:inset 0 0 5px #666;
-font-weight:bold;
+	background-image: url('../images/leather-cover-front.jpg') !important;
+	background-position: center;
+	background-size: cover;
+	border-radius: 5px;
+	-webkit-box-shadow:inset 0 0 5px #666;
+	-moz-box-shadow:inset 0 0 5px #666;
+	-o-box-shadow:inset 0 0 5px #666;
+	-ms-box-shadow:inset 0 0 5px #666;
+	box-shadow:inset 0 0 5px #666;
+	font-weight:bold;
 }
 
 #flipbook .hard.inside-cover{
-background-image: url('../images/leather-cover-inside.jpg') !important;
-background-position: center;
-background-size: cover;
-background-color: black;
-border-radius: 5px;
--webkit-box-shadow:inset 0 0 5px #666;
--moz-box-shadow:inset 0 0 5px #666;
--o-box-shadow:inset 0 0 5px #666;
--ms-box-shadow:inset 0 0 5px #666;
-box-shadow:inset 0 0 5px #666;
-font-weight:bold;
+	background-image: url('../images/leather-cover-inside.jpg') !important;
+	background-position: center;
+	background-size: cover;
+	background-color: black;
+	border-radius: 5px;
+	-webkit-box-shadow:inset 0 0 5px #666;
+	-moz-box-shadow:inset 0 0 5px #666;
+	-o-box-shadow:inset 0 0 5px #666;
+	-ms-box-shadow:inset 0 0 5px #666;
+	box-shadow:inset 0 0 5px #666;
+	font-weight:bold;
 }
 
 /************************** ngAnimate ****************************/

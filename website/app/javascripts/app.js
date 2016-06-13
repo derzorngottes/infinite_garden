@@ -8,6 +8,7 @@
       'ngMessages',
       'ui.router',
       //custom
+      'bulletin',
       'journal'
     ]);
 })();
