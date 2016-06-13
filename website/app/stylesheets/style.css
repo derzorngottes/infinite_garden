@@ -147,6 +147,25 @@ footer {
 	font-weight:bold;
 }
 
+.journal-entry {
+	width: 100%;
+}
+
+.entry-pic {
+	background-size: contain;
+	background-repeat: no-repeat;
+	margin: 0 auto;
+	margin-top: 35px;
+	width: 80%;
+	padding: 0;
+}
+
+.entry-pic img {
+	width: 100%;
+	margin-top: -75px;
+}
+
+
 /************************** ngAnimate ****************************/
 
 .ng-enter {

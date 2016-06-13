@@ -22,10 +22,8 @@
         $('#flipbook').turn('peel', 'br');
       },
       controller: function($scope) {
-        $scope.show_page = page => {
-          console.log('page', page);
-          $('#flipbook').turn('page', page);
-        }
+        
+
       },
       controllerAs: 'journal'
     }
