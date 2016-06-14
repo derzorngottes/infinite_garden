@@ -4,6 +4,13 @@ using System;
 
 public class Plant : MonoBehavior {
 
+  public int rand;
+  public float maxHeight;
+  public float maxWidth;
+  public float idealAlpha;
+
+  // public this.Tile reference
+
   // Create a set of genes using binary int values (1 and 0)
   // Tie each gene to a an environmental interaction or to a
   // trait such as longevity
@@ -42,36 +49,48 @@ public class Plant : MonoBehavior {
     // etc?
   }
 
-  void Degenerate(int lightDifference) {
-    // if lightDifference > this.lightTolerence
-    // { this.alpha ++; this.growthRate = 0; this.longevityRate --; }
-    //
-    // else (if cause is something else) { same but different rate? }
+  public void Degenerate(int lightDifference) {
+    if lightDifference > this.lightTolerence {
+      this.alpha ++;
+      this.growthRate = 0;
+      this.longevityRate --;
+    } else (if cause is something else) { same but different rate? }
   }
 
+
+  // if max height and width are not reached and light levels are optimal
+  // grow tall and wide, and if deepest color level not reached, deepen
+  // color. Also random chance of pollination and genetic mutation.
   void Grow() {
-    // if this.Tile.lightLevel is within 0.3 of this.lightTolerence
-    // if this.height != this.maxHeight
-    // if this.width != this.maxWidth
+    if (this.Tile.lightLevel - this.lightTolerence < 0.3) {
+      if(this.height != this.maxHeight) {
+        if(this.width != this.maxWidth) {
+          this.height *= this.growthRate;
+          this.width *= this.growthRate;
 
-    // this.height *= this.growthRate;
-    // this.width *= this.growthRate;
+          if(this.colorAlpha != this.idealAlpha) {
+            this.colorAlpha++;
+          }
+        }
+      }
+    }
 
-    // if this.colorAlpha != this.idealAlpha, this.colorAlpha ++
-
-    // random chance of this.Pollinate()
-    // random chance of this.Mutate()
+    if(rand == 1) {
+      this.Pollinate();
+    } else if(rand == 2) {
+      this.Mutate();
+    }
   }
 
   void Pollinate() {
-    // Plant babyPlant = this;
-
-    // return babyPlant;
+    Plant babyPlant = this.genome;
+    //pass genome into pollinate function on Tile
+    return babyPlant;
   }
 
   void Die() {
-    // this.Tile.isEmpty = true;
-    // this.Tile.soil.fertilized = true;
+    this.Tile.isEmpty = true;
+    this.Tile.soil.fertilized = true;
 
     // remove from map
     // remove from any databases
