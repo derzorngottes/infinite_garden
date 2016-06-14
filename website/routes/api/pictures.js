@@ -47,9 +47,8 @@ function addPicture(req, res, next) {
     if (error) {
       res.status(400).send(error);
     }
-    else if (newPic) {
-
+    else (newPic) {
+      res.send(newPic);
     }
-    else
   });
 }
