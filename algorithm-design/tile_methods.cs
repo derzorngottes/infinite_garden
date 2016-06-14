@@ -4,6 +4,14 @@ using System;
 
 public class Tile : MonoBehavior {
 
+  public bool isEmpty;
+  public bool fertilized;
+  public float lightLevel;
+  public float elevation;
+  public int x;
+  public int y;
+  public int z;
+
   // Methods:
   // AddPlant(){}
   // RemovePlant(){}
@@ -26,7 +34,7 @@ public class Tile : MonoBehavior {
     // and add it to the tile
     private Vector3 plantPosition = new Vector3(this.x, this.y, this.z);
     GameObject plantToAdd = Instantiate (newPlant) as GameObject;
-    
+
     plantToAdd.transform.position = plantPosition;
   }
 

@@ -2,9 +2,10 @@ using UnityEngine;
 using System.Collections;
 using System;
 
-public GameObject myPlants;
+//public array myPlants;
 // Should generate random coordinates for each prepopulated plant
 // (will need to be separate function)
+
 private Vector3[] plantPositions = new Vector3 {
    new Vector3(x, y, z), // x, y, z are map coordinates
    new Vector2(x, y, z)  // etc.
