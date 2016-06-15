@@ -1,8 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const server = require('../bin/www');
-const io = require('socket.io')(server);
-const socket =  io();
 const Picture = require('../../services/pictures');
 
 // routes
@@ -47,8 +44,30 @@ function addPicture(req, res, next) {
     if (error) {
       res.status(400).send(error);
     }
-    else (newPic) {
+    else {
       res.send(newPic);
+    }
+  });
+}
+
+function updatePicture(req, res, next) {
+  Picture.updatePic(req.body, (error, updatePic) => {
+    if (error) {
+      res.status(400).send(error);
+    }
+    else {
+      res.send(updatePic);
+    }
+  });
+}
+
+function deletePicture(req, res, next) {
+  Picture.deletePic(req.params.id, (error, row) => {
+    if (error) {
+      res.status(400).send(error);
+    }
+    else {
+      res.send(row);
     }
   });
 }

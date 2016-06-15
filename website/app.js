@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const expressJwt = require('express-jwt');
 const session = require('express-session');
 const app = express();
+app.io = require('socket.io')();
 
 require('dotenv').load();
 require('rootpath')();
@@ -71,6 +72,5 @@ app.use((err, req, res, next) => {
     error: {}
   });
 });
-
 
 module.exports = app;
