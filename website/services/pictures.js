@@ -4,7 +4,7 @@ function picture() {
   return knex('pictures');
 }
 
-picture.getById(id) = callback => {
+picture.getById = (id, callback) => {
   picture().where({ id: id }).then((picture) => {
     callback(undefined, picture);
   })
@@ -13,7 +13,7 @@ picture.getById(id) = callback => {
   });
 }
 
-picture.getAllbyUser(userId) = callback => {
+picture.getAllbyUser = (userId, callback) => {
   picture().where({ author_id: userId }).then((pictures) => {
     callback(undefined, pictures);
   })
@@ -22,7 +22,7 @@ picture.getAllbyUser(userId) = callback => {
   });
 }
 
-picture.addPic(picture) = callback => {
+picture.addPic = (picture, callback) => {
   picture().insert(picture, '*').then((newPic) => {
     callback(undefined, newPic);
   })
@@ -31,7 +31,7 @@ picture.addPic(picture) = callback => {
   });
 }
 
-picture.updatePic(picture) = callback => {
+picture.updatePic = (picture, callback) => {
   picture()
     .where({ id: picture.id })
     .update(picture, '*').then((updatePic) => {
@@ -42,7 +42,7 @@ picture.updatePic(picture) = callback => {
     });
 }
 
-picture.deletePic(id) = callback => {
+picture.deletePic = (id, callback) => {
   picture().where({ id: id }).del().then((row) => {
     callback(undefined, row);
   })
