@@ -23,7 +23,8 @@ picture.getAllbyUser = (userId, callback) => {
 }
 
 picture.addPic = (picture, callback) => {
-  picture().insert(picture, '*').then((newPic) => {
+  console.log(picture);
+  picture().insert({ link: picture.link }, '*').then((newPic) => {
     callback(undefined, newPic);
   })
   .catch((error) => {

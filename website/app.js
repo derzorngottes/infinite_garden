@@ -36,6 +36,9 @@ app.use('/login', require('routes/login'));
 app.use('/register', require('routes/register'));
 app.use('/app', require('routes/app_access'));
 app.use('/api/users', require('routes/api/users'));
+app.use('/api/comments', require('routes/api/comments'));
+app.use('/api/pictures', require('routes/api/pictures'));
+app.use('/api/posts', require('routes/api/posts'));
 
 // make '/app' default route
 app.get('/', (req, res, next) => {
