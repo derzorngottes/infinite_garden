@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const expressJwt = require('express-jwt');
 const session = require('express-session');
 const app = express();
+app.io = require('socket.io')();
 
 require('dotenv').load();
 require('rootpath')();
@@ -35,6 +36,9 @@ app.use('/login', require('routes/login'));
 app.use('/register', require('routes/register'));
 app.use('/app', require('routes/app_access'));
 app.use('/api/users', require('routes/api/users'));
+app.use('/api/comments', require('routes/api/comments'));
+app.use('/api/pictures', require('routes/api/pictures'));
+app.use('/api/posts', require('routes/api/posts'));
 
 // make '/app' default route
 app.get('/', (req, res, next) => {
@@ -71,6 +75,5 @@ app.use((err, req, res, next) => {
     error: {}
   });
 });
-
 
 module.exports = app;
