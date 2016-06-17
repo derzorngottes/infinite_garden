@@ -38,10 +38,10 @@ Users will be able to travel to different islands and experience different natur
 
 
 Link to site repo:
-(infinite_garden site)[https://github.com/Cashed/inifinite-garden-site]
+[infinite_garden site](https://github.com/Cashed/inifinite-garden-site)
 
 Link to live site:
-(infinite_garden)[https://infinite-garden.herokuapp.com/login?returnUrl=%2Fapp%2F]
+[infinite_garden](https://infinite-garden.herokuapp.com/login?returnUrl=%2Fapp%2F)
 
 ##### Technologies #####
 
