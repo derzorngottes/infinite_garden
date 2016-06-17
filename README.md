@@ -4,7 +4,7 @@
 
 infinite_garden is a virtual island which visitors can explore in order to experience a refuge away from online noise, and to observe the organic processes encoded in the environmental flora.
 
-##### Environment ##### (asterisk denotes unfinished components)
+##### Environment (asterisk denotes unfinished components)  #####
 
 The landscape is generated with a procedural algorithm which describes the shape of the landmass, its height variations, and the colors of the various regions.
 
@@ -28,7 +28,7 @@ Users can photograph and take notes on the environment. These observations are s
 
 * Users will be able to add observations to a data analysis tool in order to create models for understanding plant behavior.
 
-##### Future plans ##### (not yet in development)
+##### Future plans (not yet in development) #####
 
 Visitors will have the opportunity to design a plant and place it in the garden.
 
